@@ -130,28 +130,26 @@ function handleAction {
 				if [[ "$vm" == *"${TGT[@]}"* ]]; then
 					$PROG startvm "${vm[@]}" --type headless
 				fi
+				if [ "$?" -ne 0 ]; then
+					logAndPrint "An error was encountered. This command could not be completed as requested. Skipping ${vm[@]}..."
+				fi
 			done; ;;
-			#Old method before wildcard ability
-			#$PROG startvm "${TGT[@]}" --type headless; ;;
 		("pause" | "resume" | "reset"| "acpipowerbutton" | "poweroff" | "savestate")
 			log "Processing $CMD on $TGT..."
 			for vm in "${ALLVMS[@]}"; do
 				if [[ "$vm" == *"${TGT[@]}"* ]]; then
 					$PROG controlvm "${vm[@]}" "$CMD"
 				fi
+				if [ "$?" -ne 0 ]; then
+					logAndPrint "An error was encountered. This command could not be completed as requested. Skipping ${vm[@]}..."
+				fi
 			done; ;;
-			#Old method before wildcard ability
-			#$PROG controlvm "${TGT[@]}" "$CMD"; ;;
 		("list")			
 			log "Processing $CMD on $TGT..."
 			$PROG $CMD vms | grep "${TGT[@]}" | grep -o '".*"' | sed 's/"//g'; ;;
 		*)
 			logAndPrint "Command $CMD is not supported. Skipping $TGT..."; ;;
 	esac
-	
-	if [ "$?" -ne 0 ]; then
-		logAndPrintFail "An error was encountered. This command could not be completed as requested."
-	fi
 }
 
 #####################################

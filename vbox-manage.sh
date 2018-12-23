@@ -2,7 +2,9 @@
 #
 # vbox-manage.sh
 # 
-# This script makes it easy to interact with VirtualBox's vboxmanage tool
+# vbox-manage is a powerful front-end application for manipulating the actual vboxmanage application 
+# that comes with VirtualBox. It has many options to use in selecting which VMs to manipulate. 
+# To get started, simply type ./vbox-manage.sh and view the examples!
 #
 # Requires: command vboxmanage grep sed readarray echo printf whereis cut date stat
 #
@@ -56,7 +58,7 @@
 #####################################
 
 #Requirements
-REQUIRED=("command vboxmanage" "grep" "sed" "readarray" "echo" "printf" "whereis" "cut" "date" "stat")
+REQUIRED=("command" "vboxmanage" "grep" "sed" "readarray" "echo" "printf" "whereis" "cut" "date" "stat")
 for req in "${REQUIRED[@]}"; do
 	command -v $req &>null
 	if [ "$?" -ne 0 ]; then
@@ -206,9 +208,9 @@ else
 		("program")
 			more vbox-manage.sh; ;;
 		("copyright")
-			sed -n '9,26p' vbox-manage.sh; ;;
+			sed -n '10,29p' vbox-manage.sh; ;;
 		("help")
-			sed -n '28,44p' vbox-manage.sh; ;;
+			sed -n '29,47p' vbox-manage.sh; ;;
 		*)
 			handleAction $CMD "$TGT"
 	esac

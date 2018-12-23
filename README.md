@@ -1,5 +1,5 @@
 # vbox-manage.sh
-vbox-manage is a simple front-end application for manipulating the actual vboxmanage application that comes with VirtualBox. It has many options to use in selecting which VMs to manipulate. To get started, simply type ./vbox-manage.sh and view the examples!
+vbox-manage is a powerful front-end application for manipulating the actual vboxmanage application that comes with VirtualBox. It has many options to use in selecting which VMs to manipulate. To get started, simply type ./vbox-manage.sh and view the examples!
 
 TitaniumCoder477
 

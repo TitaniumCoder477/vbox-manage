@@ -38,7 +38,7 @@
 #	./vbox-manage.sh restart DC			(this would restart all VMs with 'DC' in the name)
 #	./vbox-manage.sh pause MY-DC-001		(this would pause all VMs with 'MY-DC-001' in the name)
 #	./vbox-manage.sh poweroff gameservers.txt	(this would power off all the VMs listed in the file)
-#	./vbox-manage.sh acpipowerbutton gameservers.txt	(this is safer but possibly not supported by a VM)
+#	./vbox-manage.sh acpipowerbutton GAME-SRV	(this is safer but possibly not supported by some VMs)
 #	./vbox-manage.sh list *				(this would list all the VMs)
 #	./vbox-manage.sh list running			(this would list all the VMs that are running)
 #	./vbox-manage.sh list DC > DCs.txt		(this would list one or more VMs that have 'DC' in the name)
@@ -208,7 +208,7 @@ else
 		("copyright")
 			sed -n '9,26p' vbox-manage.sh; ;;
 		("help")
-			sed -n '28,43p' vbox-manage.sh; ;;
+			sed -n '28,44p' vbox-manage.sh; ;;
 		*)
 			handleAction $CMD "$TGT"
 	esac

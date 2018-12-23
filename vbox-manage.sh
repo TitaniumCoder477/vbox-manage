@@ -36,18 +36,19 @@
 #
 #	./vbox-manage.sh start *			(this will start all VMs)
 #	./vbox-manage.sh restart DC			(this would restart all VMs with 'DC' in the name)
-#	./vbox-manage.sh pause MY-DC-001		(this would pause all VMs with 'MY-DC-001' in the name which would likely be just one)
-#	./vbox-manage.sh poweroff gameservers.txt	(this would power off all the VMs listed in the gameservers.txt file)
+#	./vbox-manage.sh pause MY-DC-001		(this would pause all VMs with 'MY-DC-001' in the name)
+#	./vbox-manage.sh poweroff gameservers.txt	(this would power off all the VMs listed in the file)
+#	./vbox-manage.sh acpipowerbutton gameservers.txt	(this is safer but possibly not supported by a VM)
 #	./vbox-manage.sh list *				(this would list all the VMs)
 #	./vbox-manage.sh list running			(this would list all the VMs that are running)
-#	./vbox-manage.sh list DC > DCs.txt		(this would list one or more VMs that have 'DC' in the name and would send the output to a text file)
+#	./vbox-manage.sh list DC > DCs.txt		(this would list one or more VMs that have 'DC' in the name)
 #
 # Example crontab entry
 #	0 * * * * /home/jwilmoth/vbox-manage.sh restart /home/jwilmoth/gameservers.txt
 #
-#   where jwilmoth is your own home folder and gameservers.txt is a file with one or more paths
+#   where jwilmoth is your own home folder and gameservers.txt is a file with one or more target VMs.
 #
-# NOTE: Path is the absolute path. Please make sure to specify the full path!
+# NOTE: Targe is relative when used to specify a file. Be sure to use the full path unless it is local.
 #
 
 #####################################
